@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--<link rel="stylesheet" href="js/jDownload-master/jquery.jdownload.css"></>-->
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+<!--<script src="js/jquery.fileDownload.js"></script>-->
+<!--<script src="js/jDownload-master/jquery.jdownload.js"></script>-->
+<!--<script src="js/jDownload-master/jquery.jdownload.min.js"></script>
+-->
+	</head>
+	<body>
+		<div id="main" style="width: 800px;height:400px;"></div>
+		
+		<div><button id="btn" type="button">展示</button></div>
+		<div><button id="btn2" type="button">前端接收后端get</button></div>
+			<div><button id="btn3" type="button">前端post</button></div>
+				
+				<div><button id="btn4" type="button">ajax文件下载</button></div>
+					<div><button id="btn5" type="button">普通GET文件下载</button></div>
+						<div><button id="btn6" type="button">jqueryfileDownload但他不是异步</button>	</div>
+						<div><button id="btn7" type="button">API很迷jDownLoad图形下载界面</button>
+
+
+
+			<label id="label" type="text"></label>
+		</div>
+						<div><button id="btn8" type="button">session test one</button>
+						</div>
+		<div>
+			<button id="btn9" type="button">tinytest</button>
+		</div>
+        <div>
+            <button id="btn10" type="button">test10</button>
+        </div>
+
+							<script type="application/javascript">
+			function show(){
+				$.ajax({
+					type:"post",
+					//url:"http://localhost:8080/libraryone/shengejing/onedayshow",
+					url:"http://localhost:8080/libraryone/test/editurl",
+					async:false,
+					datatype:"json",
+					crossDomain: true,
+						data: {shop:"七格格旗舰店",
+						begindate:"2017-8-28"},
+					//contentType:"application/json;charset=utf-8",
+					success:function(result){
+						if(result){
+					
+
+						};						
+					},
+					error:function(error){
+						alert("后台问题请求失败")
+					
+					}
+				});
+			}
+		</script>
+		<script type="application/javascript">
+			function show2(){
+		
+				$.ajax({
+					type:"GET",
+					//url:"http://127.0.0.1:8080/libraryone/test/getjson",
+					url:"http://127.0.0.1:8080/libraryone/HotGoods/showhotgoods",
+					async:true,
+					datatype:"json",
+					crossDomain: true,
+					//headers: { 'Access-Control-Allow-Origin': 'http://127.0.0.1:8080' },
+					//contentType:"application/json;charset=utf-8",
+					success:function(result){
+
+						alert(result);
+						/*if(result){
+							var result=eval("("+result+")");
+							$("label".val(result));
+							//$()
+							/* myChart.hideLoading();
+						     myChart.setOption(option);
+*/
+												
+					},
+					error:function(error){
+						alert("后台问题请求失败")
+				
+					}
+				});
+			}
+		</script>
+				<script type="application/javascript">
+			function show3(){
+		
+				$.ajax({
+					type:"POST",
+					url:"http://127.0.0.1:8080/libraryone/test/ajaxgetdemo",
+					//url:"http://127.0.0.1:8080/libraryone/HotGoods/showhotgoods",
+					async:true,
+					data:{name:'123'},
+					datatype:"json",
+					crossDomain: true,
+					headers: { 'Access-Control-Allow-Origin': '*' },
+					//contentType:"application/json;charset=utf-8",
+					success:function(result){
+						alert(result);
+						/*if(result){
+							var result=eval("("+result+")");
+							$("label".val(result));
+							//$()
+							/* myChart.hideLoading();
+						     myChart.setOption(option);
+*/
+												
+					},
+					error:function(error){
+						alert("后台问题请求失败")
+				
+					}
+				});
+			}
+		</script>
+					<script type="application/javascript">
+  	            function show4(){
+				$.ajax({
+					type:"GET",
+					url:"http://127.0.0.1:8080/libraryone/HotGoods/dodownload",
+					//url:"http://127.0.0.1:8080/libraryone/HotGoods/showhotgoods",
+					async:false,
+					data:{filename:'1.jpg'},
+					//datatype:"json",
+					crossDomain: true,
+					headers: { 'Access-Control-Allow-Origin': '*' },
+					//contentType:"application/json;charset=utf-8",
+					success:function(result){
+						//alert("success");
+					
+												
+					},
+					error:function(error){
+						alert("后台问题请求失败")
+				
+					}
+				});
+			}
+			/*function show4(){
+				window.location.href="http://127.0.0.1:8080/libraryone/HotGoods/dodownload?filename=1.jpg";
+			}*/
+		</script>
+		<script type="application/javascript">
+			function show5(){
+				window.location.href="http://127.0.0.1:8080/libraryone/HotGoods/dodownload?filename=1.jpg";
+				//测试接口
+				//window.location.href="http://127.0.0.1:8080/libraryone/shengecanmou/download?start=2017-9-16&end=2017-9-16&id=1";
+			}
+		</script>
+		<script type="application/javascript">
+			function show6(){
+				$.fileDownload('http://127.0.0.1:8080/libraryone/HotGoods/dodownload',{
+					data:{filename:'1.jpg'}
+					
+				})
+			}
+		</script>
+		<script type="application/javascript">
+			function show7(){
+				$this.jDownload({
+
+				})
+			}
+		</script>
+							<script type="application/javascript">
+                                function show8(){
+                                 //   window.location.href="http://127.0.0.1:8080/libraryone/Session/one";
+                                }
+							</script>
+		<script type="application/javascript">
+			function test9(){
+                var baseGetURL = "http://10.25.0.225:8000/ar/";
+                var tranCode="login";
+                var tranData="userName=18888888888&userPassward=123456&lang=zh-Hans";
+                    var url=baseGetURL+tranCode+".tml?"+tranData;
+                    $.ajax({
+                        type:"POST",
+                        url:url,
+                        //url:"http://127.0.0.1:8080/libraryone/HotGoods/showhotgoods",
+                        async:true,
+                        //data:{name:'123'},
+                        datatype:"json",
+                        crossDomain: true,
+                        // headers: { 'Access-Control-Allow-Origin': '*' },
+                        //contentType:"application/json;charset=utf-8",
+                        success:function(result){
+                            var a = eval('(' + result + ')');
+
+                            console.info(a.userID)
+                            //console.log(a);
+
+                        },
+                        error:function(error){
+                            alert(error);
+
+                        }
+                    });
+
+			}
+			</script>
+<script type="application/javascript">
+    function test10() {
+        $.ajax({
+            type:"GET",
+            url:"http://127.0.0.1:8080/libraryone/query/",
+            async:true,
+            //data:{name:'123'},
+            datatype:"json",
+            crossDomain: true,
+            success:function(result){
+                var a = eval('(' + result + ')');
+               // alert(result);
+                alert(a);
+               // console.info(a.userID)
+                //console.log(a);
+
+            },
+            error:function(error){
+                alert(error);
+
+            }
+        });
+    }
+</script>
+
+		<script type="application/javascript">
+			$(document).ready(function(){
+			$("#btn").click(function(){
+				show();
+			})
+			$("#btn2").click(function(){
+				show2();
+			})
+			$("#btn3").click(function(){
+				show3();
+			})
+			$("#btn4").click(function(){
+				show4();
+			})
+			$("#btn5").click(function(){
+				show5();
+			})
+			$("#btn6").click(function(){
+				show6();
+			})
+		     $("#btn7").click(function(){
+				show7();
+			})
+                $("#btn8").click(function(){
+                    show8();
+                })
+                $("#btn9").click(function(){
+                    test9();
+                })
+                $("#btn10").click(function(){
+                    test10();
+                })
+		})
+		</script>
+		
+
+					</body>
+</html>
