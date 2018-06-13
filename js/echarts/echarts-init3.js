@@ -1821,7 +1821,7 @@ option.series[0].data = JosnList;
 
 
 //myChart.setOption(option);
-myChart.on('click', function (params) {
+graphechart.on('click', function (params) {
     //alert((params.name));
     window.open('https://www.baidu.com/s?wd=' + encodeURIComponent(params.name));
 
