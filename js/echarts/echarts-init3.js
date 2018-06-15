@@ -1,0 +1,1828 @@
+var graphechart=echarts.init(document.getElementById('full-graph'))
+
+graphechart.setOption(
+    option = {
+        backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+            offset: 0,
+            color: '#f7f8fa'
+        }, {
+            offset: 1,
+            color: '#cdd0d5'
+        }]),
+        title:{
+            text: "数据分析",
+            subtext: "各关系",
+            top: "top",
+            left: "center"
+        },
+        tooltip: {},
+        legend: {
+          formatter: function (name) {
+                return echarts.format.truncateText(name, 40, '14px Microsoft Yahei', '…');
+            },
+            tooltip: {
+                show: true
+            },
+            selectedMode: 'false',
+            bottom: 20,
+            data: ['计算机科学与教育软件学院', '地理科学学院', '机械与电气工程学院', '经济与统计学院', '土木工程学院', '新闻与传播学院', '外国语学院', '人文学院', '数学与信息科学学院', '工商管理学院', '法学院', '公共管理学院', '卫斯理安学院', '政治与公民教育学院', '旅游学院', '教育学院', '环境科学与工程学院', '化学化工学院', '物理与电子工程学院', '建筑与城市规划学院', '美术与设计学院', '生命科学学院', '体育学院', '音乐舞蹈学院']
+        },
+        toolbox: {
+            show : true,
+            feature : {
+                dataView : {show: true, readOnly: true},
+                restore : {show: true},
+                saveAsImage : {show: true}
+            }
+        },
+        animationDuration: 3000,
+        animationEasingUpdate: 'quinticInOut',
+        series: [{
+            name: '广州大学',
+            type: 'graph',
+            layout: 'force',
+
+            force: {
+                repulsion: 50
+            },
+            data: [{
+                "name": "广州大学",
+                // "x": 0,
+                // y: 0,
+                "symbolSize": 20,
+                "draggable": "true",
+                "value": 27
+
+            }, {
+                "name": "计算机科学与教育软件学院",
+                "value": 3,
+                "symbolSize": 9,
+                "category": "计算机科学与教育软件学院",
+                "draggable": "true"
+            }, {
+                "name": "计算机科学与技术",
+                "symbolSize": 3,
+                "category": "计算机科学与教育软件学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "软件工程",
+                "symbolSize": 3,
+                "category": "计算机科学与教育软件学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "网络工程",
+                "symbolSize": 3,
+                "category": "计算机科学与教育软件学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "地理科学学院",
+                "value": 6,
+                "symbolSize": 18,
+                "category": "地理科学学院",
+                "draggable": "true"
+            }, {
+                "name": "地理科学",
+                "symbolSize": 3,
+                "category": "地理科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "地理信息科学",
+                "symbolSize": 3,
+                "category": "地理科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "人文地理与城乡规划",
+                "symbolSize": 3,
+                "category": "地理科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "人文地理与城乡规划(区域物流)",
+                "symbolSize": 3,
+                "category": "地理科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "人文地理与城乡规划(不动产)",
+                "symbolSize": 3,
+                "category": "地理科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "自然地理与资源环境",
+                "symbolSize": 3,
+                "category": "地理科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "机械与电气工程学院",
+                "value": 5,
+                "symbolSize": 15,
+                "category": "机械与电气工程学院",
+                "draggable": "true"
+            }, {
+                "name": "电气工程及其自动化",
+                "symbolSize": 3,
+                "category": "机械与电气工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "机械设计制造及其自动化",
+                "symbolSize": 3,
+                "category": "机械与电气工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "电子信息工程",
+                "symbolSize": 3,
+                "category": "机械与电气工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "工业设计",
+                "symbolSize": 3,
+                "category": "机械与电气工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "通信工程",
+                "symbolSize": 3,
+                "category": "机械与电气工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "经济与统计学院",
+                "value": 6,
+                "symbolSize": 18,
+                "category": "经济与统计学院",
+                "draggable": "true"
+            }, {
+                "name": "统计学",
+                "symbolSize": 3,
+                "category": "经济与统计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "金融工程",
+                "symbolSize": 3,
+                "category": "经济与统计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "经济学",
+                "symbolSize": 3,
+                "category": "经济与统计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "国际经济与贸易",
+                "symbolSize": 3,
+                "category": "经济与统计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "金融学",
+                "symbolSize": 3,
+                "category": "经济与统计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "会计学",
+                "symbolSize": 3,
+                "category": "经济与统计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "土木工程学院",
+                "value": 8,
+                "symbolSize": 24,
+                "category": "土木工程学院",
+                "draggable": "true"
+            }, {
+                "name": "给排水科学与工程",
+                "symbolSize": 3,
+                "category": "土木工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "土木工程(道路与桥梁工程)",
+                "symbolSize": 3,
+                "category": "土木工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "土木工程(建筑工程)",
+                "symbolSize": 3,
+                "category": "土木工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "土木工程(综合试点)",
+                "symbolSize": 3,
+                "category": "土木工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "土木工程(结构分析)",
+                "symbolSize": 3,
+                "category": "土木工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "土木工程(地下建筑工程)",
+                "symbolSize": 3,
+                "category": "土木工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "交通工程",
+                "symbolSize": 3,
+                "category": "土木工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "建筑环境与能源应用工程",
+                "symbolSize": 3,
+                "category": "土木工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "新闻与传播学院",
+                "value": 5,
+                "symbolSize": 15,
+                "category": "新闻与传播学院",
+                "draggable": "true"
+            }, {
+                "name": "广告学",
+                "symbolSize": 3,
+                "category": "新闻与传播学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "广播电视学",
+                "symbolSize": 3,
+                "category": "新闻与传播学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "网络与新媒体",
+                "symbolSize": 3,
+                "category": "新闻与传播学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "播音与主持艺术",
+                "symbolSize": 3,
+                "category": "新闻与传播学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "广播电视编导",
+                "symbolSize": 3,
+                "category": "新闻与传播学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "外国语学院",
+                "value": 6,
+                "symbolSize": 18,
+                "category": "外国语学院",
+                "draggable": "true"
+            }, {
+                "name": "英语(翻译)",
+                "symbolSize": 3,
+                "category": "外国语学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "英语(教师教育)",
+                "symbolSize": 3,
+                "category": "外国语学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "英语(国际商务)",
+                "symbolSize": 3,
+                "category": "外国语学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "日语",
+                "symbolSize": 3,
+                "category": "外国语学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "英语",
+                "symbolSize": 3,
+                "category": "外国语学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "法语",
+                "symbolSize": 3,
+                "category": "外国语学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "人文学院",
+                "value": 10,
+                "symbolSize": 30,
+                "category": "人文学院",
+                "draggable": "true"
+            }, {
+                "name": "汉语言文学",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "历史学",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "汉语国际教育",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "汉语言文学(戏剧与影视学)",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "汉语言文学(文学)",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "汉语言文学(秘书学)",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "汉语言文学(应用语言学)",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "汉语言文学(教师教育)",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "历史学(教师教育)",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "历史学(文化资源开发与利用)",
+                "symbolSize": 3,
+                "category": "人文学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "数学与信息科学学院",
+                "value": 6,
+                "symbolSize": 18,
+                "category": "数学与信息科学学院",
+                "draggable": "true"
+            }, {
+                "name": "信息安全",
+                "symbolSize": 3,
+                "category": "数学与信息科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "数学与应用数学(金融数学)",
+                "symbolSize": 3,
+                "category": "数学与信息科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "信息与计算科学",
+                "symbolSize": 3,
+                "category": "数学与信息科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "数学与应用数学(教师教育)",
+                "symbolSize": 3,
+                "category": "数学与信息科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "数学与应用数学(精算学)",
+                "symbolSize": 3,
+                "category": "数学与信息科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "数学与应用数学(基础数学)",
+                "symbolSize": 3,
+                "category": "数学与信息科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "工商管理学院",
+                "value": 6,
+                "symbolSize": 18,
+                "category": "工商管理学院",
+                "draggable": "true"
+            }, {
+                "name": "工程管理",
+                "symbolSize": 3,
+                "category": "工商管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "物流管理",
+                "symbolSize": 3,
+                "category": "工商管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "工商管理",
+                "symbolSize": 3,
+                "category": "工商管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "电子商务",
+                "symbolSize": 3,
+                "category": "工商管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "市场营销",
+                "symbolSize": 3,
+                "category": "工商管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "人力资源管理",
+                "symbolSize": 3,
+                "category": "工商管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "法学院",
+                "value": 2,
+                "symbolSize": 6,
+                "category": "法学院",
+                "draggable": "true"
+            }, {
+                "name": "法学",
+                "symbolSize": 3,
+                "category": "法学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "法学（律师）",
+                "symbolSize": 3,
+                "category": "法学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "公共管理学院",
+                "value": 3,
+                "symbolSize": 9,
+                "category": "公共管理学院",
+                "draggable": "true"
+            }, {
+                "name": "社会工作",
+                "symbolSize": 3,
+                "category": "公共管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "行政管理",
+                "symbolSize": 3,
+                "category": "公共管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "公共事业管理",
+                "symbolSize": 3,
+                "category": "公共管理学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "卫斯理安学院",
+                "value": 2,
+                "symbolSize": 6,
+                "category": "卫斯理安学院",
+                "draggable": "true"
+            }, {
+                "name": "经济学(卫斯理安)",
+                "symbolSize": 3,
+                "category": "卫斯理安学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "工商管理(卫斯理安)",
+                "symbolSize": 3,
+                "category": "卫斯理安学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "政治与公民教育学院",
+                "value": 1,
+                "symbolSize": 3,
+                "category": "政治与公民教育学院",
+                "draggable": "true"
+            }, {
+                "name": "思想政治教育",
+                "symbolSize": 3,
+                "category": "政治与公民教育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "旅游学院",
+                "value": 4,
+                "symbolSize": 12,
+                "category": "旅游学院",
+                "draggable": "true"
+            }, {
+                "name": "会展经济与管理",
+                "symbolSize": 3,
+                "category": "旅游学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "旅游管理(旅游企业管理)",
+                "symbolSize": 3,
+                "category": "旅游学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "旅游管理(酒店管理)",
+                "symbolSize": 3,
+                "category": "旅游学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "旅游管理[中法]",
+                "symbolSize": 3,
+                "category": "旅游学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "教育学院",
+                "value": 6,
+                "symbolSize": 18,
+                "category": "教育学院",
+                "draggable": "true"
+            }, {
+                "name": "心理学",
+                "symbolSize": 3,
+                "category": "教育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "心理学（特殊儿童心理发展与教育）",
+                "symbolSize": 3,
+                "category": "教育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "应用心理学",
+                "symbolSize": 3,
+                "category": "教育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "教育技术学",
+                "symbolSize": 3,
+                "category": "教育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "学前教育",
+                "symbolSize": 3,
+                "category": "教育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "小学教育",
+                "symbolSize": 3,
+                "category": "教育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "环境科学与工程学院",
+                "value": 2,
+                "symbolSize": 6,
+                "category": "环境科学与工程学院",
+                "draggable": "true"
+            }, {
+                "name": "环境工程",
+                "symbolSize": 3,
+                "category": "环境科学与工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "环境科学",
+                "symbolSize": 3,
+                "category": "环境科学与工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "化学化工学院",
+                "value": 5,
+                "symbolSize": 15,
+                "category": "化学化工学院",
+                "draggable": "true"
+            }, {
+                "name": "化学工程与工艺",
+                "symbolSize": 3,
+                "category": "化学化工学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "化学(教师教育)",
+                "symbolSize": 3,
+                "category": "化学化工学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "化学(精细化学品化学与技术)",
+                "symbolSize": 3,
+                "category": "化学化工学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "化学",
+                "symbolSize": 3,
+                "category": "化学化工学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "食品科学与工程",
+                "symbolSize": 3,
+                "category": "化学化工学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "物理与电子工程学院",
+                "value": 4,
+                "symbolSize": 12,
+                "category": "物理与电子工程学院",
+                "draggable": "true"
+            }, {
+                "name": "光电信息科学与工程",
+                "symbolSize": 3,
+                "category": "物理与电子工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "物联网工程",
+                "symbolSize": 3,
+                "category": "物理与电子工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "物理学",
+                "symbolSize": 3,
+                "category": "物理与电子工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "电子信息科学与技术",
+                "symbolSize": 3,
+                "category": "物理与电子工程学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "建筑与城市规划学院",
+                "value": 4,
+                "symbolSize": 12,
+                "category": "建筑与城市规划学院",
+                "draggable": "true"
+            }, {
+                "name": "建筑学",
+                "symbolSize": 3,
+                "category": "建筑与城市规划学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "城乡规划",
+                "symbolSize": 3,
+                "category": "建筑与城市规划学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "风景园林",
+                "symbolSize": 3,
+                "category": "建筑与城市规划学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "建筑学（五年制）",
+                "symbolSize": 3,
+                "category": "建筑与城市规划学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "美术与设计学院",
+                "value": 9,
+                "symbolSize": 27,
+                "category": "美术与设计学院",
+                "draggable": "true"
+            }, {
+                "name": "美术学",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "美术学(教师教育)",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "动画",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "动画(游戏动画)",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "绘画",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "动画(动画音乐与合成)",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "产品设计",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "服装与服饰设计(服装设计)",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "视觉传达设计",
+                "symbolSize": 3,
+                "category": "美术与设计学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "生命科学学院",
+                "value": 3,
+                "symbolSize": 9,
+                "category": "生命科学学院",
+                "draggable": "true"
+            }, {
+                "name": "生物科学",
+                "symbolSize": 3,
+                "category": "生命科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "生物工程",
+                "symbolSize": 3,
+                "category": "生命科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "生物技术",
+                "symbolSize": 3,
+                "category": "生命科学学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "体育学院",
+                "value": 2,
+                "symbolSize": 6,
+                "category": "体育学院",
+                "draggable": "true"
+            }, {
+                "name": "体育教育",
+                "symbolSize": 3,
+                "category": "体育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "社会体育指导与管理",
+                "symbolSize": 3,
+                "category": "体育学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "音乐舞蹈学院",
+                "value": 3,
+                "symbolSize": 9,
+                "category": "音乐舞蹈学院",
+                "draggable": "true"
+            }, {
+                "name": "音乐学",
+                "symbolSize": 3,
+                "category": "音乐舞蹈学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "舞蹈编导(编导)",
+                "symbolSize": 3,
+                "category": "音乐舞蹈学院",
+                "draggable": "true",
+                "value": 1
+            }, {
+                "name": "舞蹈编导(教师教育)",
+                "symbolSize": 3,
+                "category": "音乐舞蹈学院",
+                "draggable": "true",
+                "value": 1
+            }],
+            links: [{
+                "source": "广州大学",
+                "target": "计算机科学与教育软件学院"
+            }, {
+                "source": "计算机科学与教育软件学院",
+                "target": "计算机科学与技术"
+            }, {
+                "source": "计算机科学与教育软件学院",
+                "target": "软件工程"
+            }, {
+                "source": "计算机科学与教育软件学院",
+                "target": "网络工程"
+            }, {
+                "source": "广州大学",
+                "target": "地理科学学院"
+            }, {
+                "source": "地理科学学院",
+                "target": "地理科学"
+            }, {
+                "source": "地理科学学院",
+                "target": "地理信息科学"
+            }, {
+                "source": "地理科学学院",
+                "target": "人文地理与城乡规划"
+            }, {
+                "source": "地理科学学院",
+                "target": "人文地理与城乡规划(区域物流)"
+            }, {
+                "source": "地理科学学院",
+                "target": "人文地理与城乡规划(不动产)"
+            }, {
+                "source": "地理科学学院",
+                "target": "自然地理与资源环境"
+            }, {
+                "source": "广州大学",
+                "target": "机械与电气工程学院"
+            }, {
+                "source": "机械与电气工程学院",
+                "target": "电气工程及其自动化"
+            }, {
+                "source": "机械与电气工程学院",
+                "target": "机械设计制造及其自动化"
+            }, {
+                "source": "机械与电气工程学院",
+                "target": "电子信息工程"
+            }, {
+                "source": "机械与电气工程学院",
+                "target": "工业设计"
+            }, {
+                "source": "机械与电气工程学院",
+                "target": "通信工程"
+            }, {
+                "source": "广州大学",
+                "target": "经济与统计学院"
+            }, {
+                "source": "经济与统计学院",
+                "target": "统计学"
+            }, {
+                "source": "经济与统计学院",
+                "target": "金融工程"
+            }, {
+                "source": "经济与统计学院",
+                "target": "经济学"
+            }, {
+                "source": "经济与统计学院",
+                "target": "国际经济与贸易"
+            }, {
+                "source": "经济与统计学院",
+                "target": "金融学"
+            }, {
+                "source": "经济与统计学院",
+                "target": "会计学"
+            }, {
+                "source": "广州大学",
+                "target": "土木工程学院"
+            }, {
+                "source": "土木工程学院",
+                "target": "给排水科学与工程"
+            }, {
+                "source": "土木工程学院",
+                "target": "土木工程(道路与桥梁工程)"
+            }, {
+                "source": "土木工程学院",
+                "target": "土木工程(建筑工程)"
+            }, {
+                "source": "土木工程学院",
+                "target": "土木工程(综合试点)"
+            }, {
+                "source": "土木工程学院",
+                "target": "土木工程(结构分析)"
+            }, {
+                "source": "土木工程学院",
+                "target": "土木工程(地下建筑工程)"
+            }, {
+                "source": "土木工程学院",
+                "target": "交通工程"
+            }, {
+                "source": "土木工程学院",
+                "target": "建筑环境与能源应用工程"
+            }, {
+                "source": "广州大学",
+                "target": "新闻与传播学院"
+            }, {
+                "source": "新闻与传播学院",
+                "target": "广告学"
+            }, {
+                "source": "新闻与传播学院",
+                "target": "广播电视学"
+            }, {
+                "source": "新闻与传播学院",
+                "target": "网络与新媒体"
+            }, {
+                "source": "新闻与传播学院",
+                "target": "播音与主持艺术"
+            }, {
+                "source": "新闻与传播学院",
+                "target": "广播电视编导"
+            }, {
+                "source": "广州大学",
+                "target": "外国语学院"
+            }, {
+                "source": "外国语学院",
+                "target": "英语(翻译)"
+            }, {
+                "source": "外国语学院",
+                "target": "英语(教师教育)"
+            }, {
+                "source": "外国语学院",
+                "target": "英语(国际商务)"
+            }, {
+                "source": "外国语学院",
+                "target": "日语"
+            }, {
+                "source": "外国语学院",
+                "target": "英语"
+            }, {
+                "source": "外国语学院",
+                "target": "法语"
+            }, {
+                "source": "广州大学",
+                "target": "人文学院"
+            }, {
+                "source": "人文学院",
+                "target": "汉语言文学"
+            }, {
+                "source": "人文学院",
+                "target": "历史学"
+            }, {
+                "source": "人文学院",
+                "target": "汉语国际教育"
+            }, {
+                "source": "人文学院",
+                "target": "汉语言文学(戏剧与影视学)"
+            }, {
+                "source": "人文学院",
+                "target": "汉语言文学(文学)"
+            }, {
+                "source": "人文学院",
+                "target": "汉语言文学(秘书学)"
+            }, {
+                "source": "人文学院",
+                "target": "汉语言文学(应用语言学)"
+            }, {
+                "source": "人文学院",
+                "target": "汉语言文学(教师教育)"
+            }, {
+                "source": "人文学院",
+                "target": "历史学(教师教育)"
+            }, {
+                "source": "人文学院",
+                "target": "历史学(文化资源开发与利用)"
+            }, {
+                "source": "广州大学",
+                "target": "数学与信息科学学院"
+            }, {
+                "source": "数学与信息科学学院",
+                "target": "信息安全"
+            }, {
+                "source": "数学与信息科学学院",
+                "target": "数学与应用数学(金融数学)"
+            }, {
+                "source": "数学与信息科学学院",
+                "target": "信息与计算科学"
+            }, {
+                "source": "数学与信息科学学院",
+                "target": "数学与应用数学(教师教育)"
+            }, {
+                "source": "数学与信息科学学院",
+                "target": "数学与应用数学(精算学)"
+            }, {
+                "source": "数学与信息科学学院",
+                "target": "数学与应用数学(基础数学)"
+            }, {
+                "source": "广州大学",
+                "target": "工商管理学院"
+            }, {
+                "source": "工商管理学院",
+                "target": "工程管理"
+            }, {
+                "source": "工商管理学院",
+                "target": "物流管理"
+            }, {
+                "source": "工商管理学院",
+                "target": "工商管理"
+            }, {
+                "source": "工商管理学院",
+                "target": "电子商务"
+            }, {
+                "source": "工商管理学院",
+                "target": "市场营销"
+            }, {
+                "source": "工商管理学院",
+                "target": "人力资源管理"
+            }, {
+                "source": "广州大学",
+                "target": "法学院"
+            }, {
+                "source": "法学院",
+                "target": "法学"
+            }, {
+                "source": "法学院",
+                "target": "法学（律师）"
+            }, {
+                "source": "广州大学",
+                "target": "公共管理学院"
+            }, {
+                "source": "公共管理学院",
+                "target": "社会工作"
+            }, {
+                "source": "公共管理学院",
+                "target": "行政管理"
+            }, {
+                "source": "公共管理学院",
+                "target": "公共事业管理"
+            }, {
+                "source": "广州大学",
+                "target": "卫斯理安学院"
+            }, {
+                "source": "卫斯理安学院",
+                "target": "经济学(卫斯理安)"
+            }, {
+                "source": "卫斯理安学院",
+                "target": "工商管理(卫斯理安)"
+            }, {
+                "source": "广州大学",
+                "target": "政治与公民教育学院"
+            }, {
+                "source": "政治与公民教育学院",
+                "target": "思想政治教育"
+            }, {
+                "source": "广州大学",
+                "target": "旅游学院"
+            }, {
+                "source": "旅游学院",
+                "target": "会展经济与管理"
+            }, {
+                "source": "旅游学院",
+                "target": "旅游管理(旅游企业管理)"
+            }, {
+                "source": "旅游学院",
+                "target": "旅游管理(酒店管理)"
+            }, {
+                "source": "旅游学院",
+                "target": "旅游管理[中法]"
+            }, {
+                "source": "广州大学",
+                "target": "教育学院"
+            }, {
+                "source": "教育学院",
+                "target": "心理学"
+            }, {
+                "source": "教育学院",
+                "target": "心理学（特殊儿童心理发展与教育）"
+            }, {
+                "source": "教育学院",
+                "target": "应用心理学"
+            }, {
+                "source": "教育学院",
+                "target": "教育技术学"
+            }, {
+                "source": "教育学院",
+                "target": "学前教育"
+            }, {
+                "source": "教育学院",
+                "target": "小学教育"
+            }, {
+                "source": "广州大学",
+                "target": "环境科学与工程学院"
+            }, {
+                "source": "环境科学与工程学院",
+                "target": "环境工程"
+            }, {
+                "source": "环境科学与工程学院",
+                "target": "环境科学"
+            }, {
+                "source": "广州大学",
+                "target": "化学化工学院"
+            }, {
+                "source": "化学化工学院",
+                "target": "化学工程与工艺"
+            }, {
+                "source": "化学化工学院",
+                "target": "化学(教师教育)"
+            }, {
+                "source": "化学化工学院",
+                "target": "化学(精细化学品化学与技术)"
+            }, {
+                "source": "化学化工学院",
+                "target": "化学"
+            }, {
+                "source": "化学化工学院",
+                "target": "食品科学与工程"
+            }, {
+                "source": "广州大学",
+                "target": "物理与电子工程学院"
+            }, {
+                "source": "物理与电子工程学院",
+                "target": "光电信息科学与工程"
+            }, {
+                "source": "物理与电子工程学院",
+                "target": "物联网工程"
+            }, {
+                "source": "物理与电子工程学院",
+                "target": "物理学"
+            }, {
+                "source": "物理与电子工程学院",
+                "target": "电子信息科学与技术"
+            }, {
+                "source": "广州大学",
+                "target": "建筑与城市规划学院"
+            }, {
+                "source": "建筑与城市规划学院",
+                "target": "建筑学"
+            }, {
+                "source": "建筑与城市规划学院",
+                "target": "城乡规划"
+            }, {
+                "source": "建筑与城市规划学院",
+                "target": "风景园林"
+            }, {
+                "source": "建筑与城市规划学院",
+                "target": "建筑学（五年制）"
+            }, {
+                "source": "广州大学",
+                "target": "美术与设计学院"
+            }, {
+                "source": "美术与设计学院",
+                "target": "美术学"
+            }, {
+                "source": "美术与设计学院",
+                "target": "美术学(教师教育)"
+            }, {
+                "source": "美术与设计学院",
+                "target": "动画"
+            }, {
+                "source": "美术与设计学院",
+                "target": "动画(游戏动画)"
+            }, {
+                "source": "美术与设计学院",
+                "target": "绘画"
+            }, {
+                "source": "美术与设计学院",
+                "target": "动画(动画音乐与合成)"
+            }, {
+                "source": "美术与设计学院",
+                "target": "产品设计"
+            }, {
+                "source": "美术与设计学院",
+                "target": "服装与服饰设计(服装设计)"
+            }, {
+                "source": "美术与设计学院",
+                "target": "视觉传达设计"
+            }, {
+                "source": "广州大学",
+                "target": "生命科学学院"
+            }, {
+                "source": "生命科学学院",
+                "target": "生物科学"
+            }, {
+                "source": "生命科学学院",
+                "target": "生物工程"
+            }, {
+                "source": "生命科学学院",
+                "target": "生物技术"
+            }, {
+                "source": "广州大学",
+                "target": "体育学院"
+            }, {
+                "source": "体育学院",
+                "target": "体育教育"
+            }, {
+                "source": "体育学院",
+                "target": "社会体育指导与管理"
+            }, {
+                "source": "广州大学",
+                "target": "音乐舞蹈学院"
+            }, {
+                "source": "音乐舞蹈学院",
+                "target": "音乐学"
+            }, {
+                "source": "音乐舞蹈学院",
+                "target": "舞蹈编导(编导)"
+            }, {
+                "source": "音乐舞蹈学院",
+                "target": "舞蹈编导(教师教育)"
+            }],
+            categories: [{
+                'name': '计算机科学与教育软件学院'
+            }, {
+                'name': '地理科学学院'
+            }, {
+                'name': '机械与电气工程学院'
+            }, {
+                'name': '经济与统计学院'
+            }, {
+                'name': '土木工程学院'
+            }, {
+                'name': '新闻与传播学院'
+            }, {
+                'name': '外国语学院'
+            }, {
+                'name': '人文学院'
+            }, {
+                'name': '数学与信息科学学院'
+            }, {
+                'name': '工商管理学院'
+            }, {
+                'name': '法学院'
+            }, {
+                'name': '公共管理学院'
+            }, {
+                'name': '卫斯理安学院'
+            }, {
+                'name': '政治与公民教育学院'
+            }, {
+                'name': '旅游学院'
+            }, {
+                'name': '教育学院'
+            }, {
+                'name': '环境科学与工程学院'
+            }, {
+                'name': '化学化工学院'
+            }, {
+                'name': '物理与电子工程学院'
+            }, {
+                'name': '建筑与城市规划学院'
+            }, {
+                'name': '美术与设计学院'
+            }, {
+                'name': '生命科学学院'
+            }, {
+                'name': '体育学院'
+            }, {
+                'name': '音乐舞蹈学院'
+            }],
+            focusNodeAdjacency: true,
+            roam: true,
+            label: {
+                normal: {
+
+                    show: true,
+                    position: 'top',
+
+                }
+            },
+            lineStyle: {
+                normal: {
+                    color: 'source',
+                    curveness: 0,
+                    type: "solid"
+                }
+            }
+        }]
+    }
+
+)
+
+
+var hotwordschart=echarts.init(document.getElementById('hot-words'))
+
+hotwordschart.setOption(
+    option = {
+        title: {
+            text: '热点分析',
+            link: 'https://www.baidu.com/s?wd=' + encodeURIComponent('ECharts'),
+            x: 'center',
+            textStyle: {
+                fontSize: 23
+            }
+
+        },
+        backgroundColor: '#F7F7F7',
+        tooltip: {
+            show: true
+        },
+        toolbox: {
+            feature: {
+                saveAsImage: {
+                    iconStyle: {
+                        normal: {
+                            color: '#FFFFFF'
+                        }
+                    }
+                }
+            }
+        },
+        series: [{
+            name: '热点分析',
+            type: 'wordCloud',
+            //size: ['9%', '99%'],
+            sizeRange: [6, 66],
+            //textRotation: [0, 45, 90, -45],
+            rotationRange: [-45, 90],
+            //shape: 'circle',
+            textPadding: 0,
+            autoSize: {
+                enable: true,
+                minSize: 6
+            },
+            textStyle: {
+                normal: {
+                    color: function() {
+                        return 'rgb(' + [
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160),
+                            Math.round(Math.random() * 160)
+                        ].join(',') + ')';
+                    }
+                },
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                }
+            },
+            data: [{
+                name: "Jayfee",
+                value: 666
+            }, {
+                name: "Nancy",
+                value: 520
+            }]
+        }]
+    }
+)
+var JosnList = [];
+
+JosnList.push({
+    name: "Jayfee",
+    value: 666
+}, {
+    name: "Nancy",
+    value: 520
+}, {
+    name: "生活资源",
+    value: "999"
+}, {
+    name: "供热管理",
+    value: "888"
+}, {
+    name: "供气质量",
+    value: "777"
+}, {
+    name: "生活用水管理",
+    value: "688"
+}, {
+    name: "一次供水问题",
+    value: "588"
+}, {
+    name: "交通运输",
+    value: "516"
+}, {
+    name: "城市交通",
+    value: "515"
+}, {
+    name: "环境保护",
+    value: "483"
+}, {
+    name: "房地产管理",
+    value: "462"
+}, {
+    name: "城乡建设",
+    value: "449"
+}, {
+    name: "社会保障与福利",
+    value: "429"
+}, {
+    name: "社会保障",
+    value: "407"
+}, {
+    name: "文体与教育管理",
+    value: "406"
+}, {
+    name: "公共安全",
+    value: "406"
+}, {
+    name: "公交运输管理",
+    value: "386"
+}, {
+    name: "出租车运营管理",
+    value: "385"
+}, {
+    name: "供热管理",
+    value: "375"
+}, {
+    name: "市容环卫",
+    value: "355"
+}, {
+    name: "自然资源管理",
+    value: "355"
+}, {
+    name: "粉尘污染",
+    value: "335"
+}, {
+    name: "噪声污染",
+    value: "324"
+}, {
+    name: "土地资源管理",
+    value: "304"
+}, {
+    name: "物业服务与管理",
+    value: "304"
+}, {
+    name: "医疗卫生",
+    value: "284"
+}, {
+    name: "粉煤灰污染",
+    value: "284"
+}, {
+    name: "占道",
+    value: "284"
+}, {
+    name: "供热发展",
+    value: "254"
+}, {
+    name: "农村土地规划管理",
+    value: "254"
+}, {
+    name: "生活噪音",
+    value: "253"
+}, {
+    name: "供热单位影响",
+    value: "253"
+}, {
+    name: "城市供电",
+    value: "223"
+}, {
+    name: "房屋质量与安全",
+    value: "223"
+}, {
+    name: "大气污染",
+    value: "223"
+}, {
+    name: "房屋安全",
+    value: "223"
+}, {
+    name: "文化活动",
+    value: "223"
+}, {
+    name: "拆迁管理",
+    value: "223"
+}, {
+    name: "公共设施",
+    value: "223"
+}, {
+    name: "供气质量",
+    value: "223"
+}, {
+    name: "供电管理",
+    value: "223"
+}, {
+    name: "燃气管理",
+    value: "152"
+}, {
+    name: "教育管理",
+    value: "152"
+}, {
+    name: "医疗纠纷",
+    value: "152"
+}, {
+    name: "执法监督",
+    value: "152"
+}, {
+    name: "设备安全",
+    value: "152"
+}, {
+    name: "政务建设",
+    value: "152"
+}, {
+    name: "县区、开发区",
+    value: "152"
+}, {
+    name: "宏观经济",
+    value: "152"
+}, {
+    name: "教育管理",
+    value: "112"
+}, {
+    name: "社会保障",
+    value: "112"
+}, {
+    name: "生活用水管理",
+    value: "112"
+}, {
+    name: "物业服务与管理",
+    value: "112"
+}, {
+    name: "分类列表",
+    value: "112"
+}, {
+    name: "农业生产",
+    value: "112"
+}, {
+    name: "二次供水问题",
+    value: "112"
+}, {
+    name: "城市公共设施",
+    value: "92"
+}, {
+    name: "拆迁政策咨询",
+    value: "92"
+}, {
+    name: "物业服务",
+    value: "92"
+}, {
+    name: "物业管理",
+    value: "92"
+}, {
+    name: "社会保障保险管理",
+    value: "92"
+}, {
+    name: "低保管理",
+    value: "92"
+}, {
+    name: "文娱市场管理",
+    value: "72"
+}, {
+    name: "城市交通秩序管理",
+    value: "72"
+}, {
+    name: "执法争议",
+    value: "72"
+}, {
+    name: "商业烟尘污染",
+    value: "72"
+}, {
+    name: "占道堆放",
+    value: "71"
+}, {
+    name: "地上设施",
+    value: "71"
+}, {
+    name: "水质",
+    value: "71"
+}, {
+    name: "无水",
+    value: "71"
+}, {
+    name: "供热单位影响",
+    value: "71"
+}, {
+    name: "人行道管理",
+    value: "71"
+}, {
+    name: "主网原因",
+    value: "71"
+}, {
+    name: "集中供热",
+    value: "71"
+}, {
+    name: "客运管理",
+    value: "71"
+}, {
+    name: "国有公交（大巴）管理",
+    value: "71"
+}, {
+    name: "工业粉尘污染",
+    value: "71"
+}, {
+    name: "治安案件",
+    value: "71"
+}, {
+    name: "压力容器安全",
+    value: "71"
+}, {
+    name: "身份证管理",
+    value: "71"
+}, {
+    name: "群众健身",
+    value: "41"
+}, {
+    name: "工业排放污染",
+    value: "41"
+}, {
+    name: "破坏森林资源",
+    value: "41"
+}, {
+    name: "市场收费",
+    value: "41"
+}, {
+    name: "生产资金",
+    value: "41"
+}, {
+    name: "生产噪声",
+    value: "41"
+}, {
+    name: "农村低保",
+    value: "41"
+}, {
+    name: "劳动争议",
+    value: "41"
+}, {
+    name: "劳动合同争议",
+    value: "41"
+}, {
+    name: "劳动报酬与福利",
+    value: "41"
+}, {
+    name: "医疗事故",
+    value: "21"
+}, {
+    name: "停供",
+    value: "21"
+}, {
+    name: "基础教育",
+    value: "21"
+}, {
+    name: "职业教育",
+    value: "21"
+}, {
+    name: "物业资质管理",
+    value: "21"
+}, {
+    name: "拆迁补偿",
+    value: "21"
+}, {
+    name: "设施维护",
+    value: "21"
+}, {
+    name: "市场外溢",
+    value: "11"
+}, {
+    name: "占道经营",
+    value: "11"
+}, {
+    name: "树木管理",
+    value: "11"
+}, {
+    name: "农村基础设施",
+    value: "11"
+}, {
+    name: "无水",
+    value: "11"
+}, {
+    name: "供气质量",
+    value: "11"
+}, {
+    name: "停气",
+    value: "11"
+}, {
+    name: "市政府工作部门（含部门管理机构、直属单位）",
+    value: "11"
+}, {
+    name: "燃气管理",
+    value: "11"
+}, {
+    name: "市容环卫",
+    value: "11"
+}, {
+    name: "新闻传媒",
+    value: "11"
+}, {
+    name: "人才招聘",
+    value: "11"
+}, {
+    name: "市场环境",
+    value: "11"
+}, {
+    name: "行政事业收费",
+    value: "11"
+}, {
+    name: "食品安全与卫生",
+    value: "11"
+}, {
+    name: "城市交通",
+    value: "11"
+}, {
+    name: "房地产开发",
+    value: "11"
+}, {
+    name: "房屋配套问题",
+    value: "11"
+}, {
+    name: "物业服务",
+    value: "11"
+}, {
+    name: "物业管理",
+    value: "11"
+}, {
+    name: "占道",
+    value: "11"
+}, {
+    name: "园林绿化",
+    value: "11"
+}, {
+    name: "户籍管理及身份证",
+    value: "11"
+}, {
+    name: "公交运输管理",
+    value: "11"
+}, {
+    name: "公路（水路）交通",
+    value: "11"
+}, {
+    name: "房屋与图纸不符",
+    value: "11"
+}, {
+    name: "有线电视",
+    value: "11"
+}, {
+    name: "社会治安",
+    value: "11"
+}, {
+    name: "林业资源",
+    value: "11"
+}, {
+    name: "其他行政事业收费",
+    value: "11"
+}, {
+    name: "经营性收费",
+    value: "11"
+}, {
+    name: "食品安全与卫生",
+    value: "11"
+}, {
+    name: "体育活动",
+    value: "11"
+}, {
+    name: "有线电视安装及调试维护",
+    value: "11"
+}, {
+    name: "低保管理",
+    value: "11"
+}, {
+    name: "劳动争议",
+    value: "11"
+}, {
+    name: "社会福利及事务",
+    value: "11"
+}, {
+    name: "一次供水问题",
+    value: "11"
+});
+
+option.series[0].data = JosnList;
+
+
+//myChart.setOption(option);
+graphechart.on('click', function (params) {
+    //alert((params.name));
+    window.open('https://www.baidu.com/s?wd=' + encodeURIComponent(params.name));
+
+});

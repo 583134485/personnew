@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<!--不用-->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport"content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="renderer" content="webkit">
+
+    <title>百度ECHarts7</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/font-awesome/4.4.0/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+
+
+    <!--    <link href="css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+        <link href="font-awesome/css/font-awesome.css?v=4.3.0" rel="stylesheet">-->
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css?v=2.2.0" rel="stylesheet">
+
+    <!--person test css-->
+    <link href="css/demo.css" rel="stylesheet">
+
+</head>
+
+<body>
+<div id="wrapper">
+    <!--侧边导航-->
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <!--折叠收缩-->
+        <div class="sidebar-collapse">
+            <!-- ul 无序列表-->
+            <ul class="nav" id="side-menu">
+                <li class="nav-header">
+
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle img-responsive" src="img/dog.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="">
+                                <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">User</strong>
+                             </span> <span class="text-muted text-xs block">管理员 <b class="caret"></b></span> </span>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="">修改头像</a>
+                            </li>
+                            <li><a href="">个人资料</a>
+                            </li>
+                            <li><a href="">联系我们</a>
+                            </li>
+                            <li><a href="">信箱</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="">安全退出</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        H+
+                    </div>
+
+                </li>
+                <li class="">
+                    <a href=""><i class="fa fa-th-large"></i> <span class="nav-label">主页</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <!--                            <li><a href="">主页示例一</a>
+                                                  </li>
+                                                <li><a href="">主页示例二</a>
+                                                  </li>
+                                                  <li><a href="">主页示例三</a>
+                                                  </li>
+                                                  <li><a href="">主页示例四</a>
+                                                  </li>-->
+                    </ul>
+                </li>
+
+
+                <li class="active">
+                    <a href="index.html"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">图表</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="echarts0.html">EChartsOne</a>
+                        </li>
+                        <li><a href="echarts.html">EChartsOne</a>
+                        </li>
+                        <li><a href="echarts5.html">EChartsTwo</a>
+                        </li>
+                        <li><a href="echarts7.html">EChartsTwo</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <!--      <li>
+                          <a href=""><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
+                          <ul class="nav nav-second-level">
+                              <li><a href="">基本表单</a>
+                              </li>
+                              <li><a href="">表单验证</a>
+                              </li>
+                              <li><a href="">高级插件</a>
+                              </li>
+                              <li><a href="">步骤条</a>
+                              </li>
+                              <li><a href="">百度WebUploader</a>
+                              </li>
+                              <li><a href="">文件上传</a>
+                              </li>
+                              <li><a href="">富文本编辑器</a>
+                              </li>
+                              <li><a href="">simditor</a>
+                              </li>
+                              <li><a href="">头像裁剪上传</a>
+                              </li>
+                              <li><a href="">日期选择器layerDate</a>
+                              </li>
+                          </ul>
+                      </li>-->
+
+                <li class="">
+                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="datatables.html">datapicker</a>
+                        </li>
+                        <li><a href="bootstraptable.html">BootStrapTable</a>
+                        </li>
+                        <li><a href="table_jqgrid.html">jqGrid</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-table"></i> <span class="nav-label">文件IO</span><span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a href="uploadfile.html">文件上传</a>
+                        </li>
+                        <li><a href="filedown.html">数据导出</a>
+                        </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg dashbard-1 ">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" method="post" action="">
+                        <div class="form-group">
+                            <input type="text" placeholder="查找的内容 …" class="form-control" name="top-search" id="top-search">
+                        </div>
+                    </form>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message"><a href="" title="返回首页"><i class="fa fa-home"></i></a></span>
+                    </li>
+
+
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 注册
+                        </a>
+                    </li>
+                    <li>
+                        <a href="login.html">
+                            <i class="fa fa-sign-out"></i> 登陆
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="fa fa-sign-out"></i> 退出
+                        </a>
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        <!-- <div class="row">-->
+        <!--有无样式差明显-->
+        <!-- <div class="col-lg-12">-->
+        <div class="wrapper  wrapper-content animated fadeInRight red-padding">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="echarts"  id="treemap" style="height: 700%;width: 100%" ></div>
+
+
+                    <div class="col-lg-12">
+                        <div><button id="btn" type="button" class="btn btn-primary">RUN</button></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                By：<a href="http://www.zi-han.net" target="_blank">zihan's blog</a>
+            </div>
+            <div>
+                <strong>Copyright</strong> H+ &copy; 2014
+            </div>
+        </div>
+        <!--     </div>-->
+        <!--</div>-->
+    </div>
+
+
+</div>
+
+<!-- Mainly scripts -->
+<!--<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.min.js?v=3.4.0"></script>-->
+<script src="https://cdn.staticfile.org/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+<!--Chosen下拉选择框 -->
+<script src="js/plugins/chosen/chosen.jquery.js"></script>
+
+<!-- jQuery Validation plugin javascript-->
+<script src="js/plugins/validate/jquery.validate.min.js"></script>
+<!--中文消息-->
+<script src="js/plugins/validate/messages_zh.min.js"></script>
+
+<!-- ECharts  old -->
+<!--<script src="js/plugins/echarts/echarts-all.js"></script>-->
+
+<!-- ECharts  3.7.1-->
+<script src="js/plugins/echarts/echarts3.7.1.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/hplus.js?v=2.2.0"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+<!-- ECharts demo data -->
+<!--<script src="js/demo/echarts-demo.js"></script>-->
+
+<script type="application/javascript">
+    $("#btn").click(function () {
+        showtreemap();
+    })
+</script>
+<script type="text/javascript">
+function showtreemap(){
+    // 基于准备好的dom，初始化echarts实例
+    var myChart = echarts.init(document.getElementById('treemap'));
+    myChart.showLoading();
+
+    var household_america_2012 = 113616229;
+    $.get("http://localhost:8080/libraryone/Treemaps/showtreemap", function (obama_budget_2012) {
+        obama_budget_2012= eval("("+obama_budget_2012+")")
+        myChart.hideLoading();
+
+        var visualMin = -100;
+        var visualMax = 100;
+        var visualMinBound = -40;
+        var visualMaxBound = 40;
+
+        convertData(obama_budget_2012);
+
+        function convertData(originList) {
+
+            var min = Infinity;
+            var max = -Infinity;
+
+            for (var i = 0; i < originList.length; i++) {
+                var node = originList[i];
+                if (node) {
+                    var value = node.value;
+                    value[2] != null && value[2] < min && (min = value[2]);
+                    value[2] != null && value[2] > max && (max = value[2]);
+                }
+            }
+
+            for (var i = 0; i < originList.length; i++) {
+                var node = originList[i];
+                if (node) {
+                    var value = node.value;
+
+                    // Scale value for visual effect
+                    if (value[2] != null && value[2] > 0) {
+                        value[3] = echarts.number.linearMap(
+                            value[2], [0, max], [visualMaxBound, visualMax], true
+                        );
+                    }
+                    else if (value[2] != null && value[2] < 0) {
+                        value[3] = echarts.number.linearMap(
+                            value[2], [min, 0], [visualMin, visualMinBound], true
+                        );
+                    }
+                    else {
+                        value[3] = 0;
+                    }
+
+                    if (!isFinite(value[3])) {
+                        value[3] = 0;
+                    }
+
+                    if (node.children) {
+                        convertData(node.children);
+                    }
+                }
+            }
+        }
+
+
+        function isValidNumber(num) {
+            return num != null && isFinite(num);
+        }
+
+        myChart.setOption(option = {
+            title: {
+                left: 'center',
+                text: 'zengliu旗舰店',
+                subtext: 'Growth > 0: green; Growth < 0: red; Growth = 0: grey'
+            },
+            tooltip: {
+                formatter: function (info) {
+                    var value = info.value;
+
+                    var amount = value[0];
+                    amount = isValidNumber(amount)
+                        ? echarts.format.addCommas(amount ) + '件'
+                        : '-';
+
+                    var amount2011 = value[1];
+                    amount2011 = isValidNumber(amount2011)
+                        ? echarts.format.addCommas(amount2011 ) + '元'
+                        : '-';
+
+                    var change = value[2];
+                    change = isValidNumber(change)
+                        ? change + '库存'
+                        : '-';
+
+                    return [
+                        '<div class="tooltip-title">' + echarts.format.encodeHTML(info.name) + '</div>',
+                        'totalSale: &nbsp;&nbsp;' + amount + '<br>',
+                        'tprice: &nbsp;&nbsp;' + amount2011 + '<br>',
+                        'stock: &nbsp;&nbsp;' + change
+                    ].join('');
+                }
+            },
+            series: [{
+                name: 'ALL',
+                top: 80,
+                type: 'treemap',
+                label: {
+                    show: true,
+                    formatter: "{b}",
+                    normal: {
+                        textStyle: {
+                            ellipsis: true
+                        }
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        borderColor: 'black'
+                    }
+                },
+                visualMin: visualMin,
+                visualMax: visualMax,
+                visualDimension: 3,
+                levels: [
+                    {
+                        itemStyle: {
+                            normal: {
+                                borderWidth: 3,
+                                borderColor: '#333',
+                                gapWidth: 3
+                            }
+                        }
+                    },
+                    {
+                        color: ['#942e38', '#aaa', '#269f3c'],
+                        colorMappingBy: 'value',
+                        itemStyle: {
+                            normal: {
+                                gapWidth: 1
+                            }
+                        }
+                    }
+                ],
+                data: obama_budget_2012
+            }]
+        });
+
+
+    });
+
+}
+</script>
+
+</body>
+
+</html>
